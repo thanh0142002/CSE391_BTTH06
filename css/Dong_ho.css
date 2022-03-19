@@ -1,0 +1,36 @@
+#time {
+    background-color: black;
+    padding: 30px;
+    color: red;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    width: 500px;
+    border: solid grey;
+}
+
+#banner {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 20%;
+    background-color: blueviolet;
+}
+
+#chao {
+    background-color: white;
+    padding: 30px;
+    color: red;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    width: 500px;
+    animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    border: solid grey;
+}
+@keyframes example {
+    from {color: red}
+    to {color: black;}
+}
