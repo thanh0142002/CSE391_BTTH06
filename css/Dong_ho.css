@@ -1,36 +1,19 @@
-#time {
-    background-color: black;
-    padding: 30px;
-    color: red;
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    width: 500px;
-    border: solid grey;
-}
-
-#banner {
-    align-items: center;
-    justify-content: center;
+.banner{
     display: flex;
-    margin-top: 20%;
-    background-color: blueviolet;
+    justify-content: center;
 }
-
-#chao {
-    background-color: white;
-    padding: 30px;
-    color: red;
-    font-size: 50px;
-    font-weight: bold;
+table{
+    margin-top: 25%;
+    border-collapse:collapse;
+    border: 5px solid gray;
     text-align: center;
-    width: 500px;
-    animation-name: example;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    border: solid grey;
 }
-@keyframes example {
-    from {color: red}
-    to {color: black;}
+.clock{
+    background-color: black;
+    padding:0 10px;
+    width: 250px;
+}
+.message{
+    font-size: 30px;
+    width: 500px;
 }

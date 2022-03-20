@@ -1,28 +1,63 @@
-function dongho() {
-    var today = new Date()
-    var gio = today.getHours()
-    var phut = today.getMinutes()
-    var giay = today.getSeconds()
-    if (giay < 10) {
-        giay = "0" + giay
-    }
-    if (phut < 10) {
-        phut = "0" + phut
-    }
-    if (gio < 10) {
-        gio = "0" + gio
-    }
-    document.getElementById("time").innerHTML = gio + ":" + phut + ":" + giay
-    setTimeout("dongho()", 1000)
-    function cauchao() {
-        if (0 <= gio < 12)
-            document.getElementById("chao").innerHTML = "Chào buổi sáng !"
-        if (12 <= gio < 17)
-            document.getElementById("chao").innerHTML = "Chào buổi chiều !"
-        if (17 <= gio < 23)
-            document.getElementById("chao").innerHTML = "Chào buổi tối !"
-        setTimeout("cauchao()", 1000)
-    }
-    cauchao()
+let hours= document.querySelectorAll('.hours')
+let minutes= document.querySelectorAll('.minutes')
+let seconds= document.querySelectorAll('.seconds')
+let message= document.querySelector('.message')
+
+//Lấy giờ hiện tại
+function clock(){
+let date=new Date()
+let h= date.getHours()
+let m= date.getMinutes()
+let s= date.getSeconds()
+
+console.log(h)
+console.log(m)
+console.log(s)
+
+if(h<10){
+    hours[0].src=`icon/00.gif`
+    hours[1].src=`icon/0${h}.gif`
 }
-dongho()
+else{
+    hours[0].src=`icon/0${Math.floor(h/10)}.gif`
+    hours[1].src=`icon/0${h%10}.gif`
+}
+
+if(m<10){
+    minutes[0].src=`icon/00.gif`
+    minutes[1].src=`icon/0${m}.gif`
+}
+else{
+    minutes[0].src=`icon/0${Math.floor(m/10)}.gif`
+    minutes[1].src=`icon/0${m%10}.gif`
+}
+if(s<10){
+    seconds[0].src=`icon/0${Math.floor(s/10)}.gif`
+    seconds[1].src=`icon/0${s%10}.gif`
+}
+else{
+    seconds[0].src=`icon/0${Math.floor(s/10)}.gif`
+    seconds[1].src=`icon/0${s%10}.gif`
+}
+if(h>=0 && h<12){
+    message.innerHTML='<span style="font-size: 40px;">Chào buổi sáng !</span>'
+}
+if(h>=12 && h<17){
+    message.innerHTML='<span style="font-size: 50px;">Chào buổi chiều !</span>'
+}
+if(h>=17 && h<=23){
+    message.innerHTML='<span style="font-size: 60px;">Chào buổi tối !</span>'
+}
+}
+// Lời chào
+function blinkColor(){
+if(message.style.color=='black'){
+    message.style.color='red'
+}
+else{
+    message.style.color='black'
+}
+}
+//Lặp lại đổi màu
+setInterval(blinkColor,500)
+setInterval(clock,1000)
